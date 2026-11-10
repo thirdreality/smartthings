@@ -1,0 +1,6 @@
+zigbeeManufacturer:
+  - id: "Third Reality/3ROR0194Z"
+    deviceLabel: ThirdReality Smart Outdoor Repeater
+    manufacturer: Third Reality, Inc
+    model: 3ROR0194Z
+    deviceProfileName: repeater-battery-temperature

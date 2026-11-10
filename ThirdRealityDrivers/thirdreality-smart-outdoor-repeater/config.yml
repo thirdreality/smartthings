@@ -1,0 +1,6 @@
+name: 'ThirdReality Smart Outdoor Repeater'
+packageKey: 'thirdreality-smart-outdoor-repeater'
+permissions:
+  zigbee: {}
+description: "Driver for ThirdReality Smart Outdoor Repeater"
+vendorSupportInformation: "https://www.3reality.com/"

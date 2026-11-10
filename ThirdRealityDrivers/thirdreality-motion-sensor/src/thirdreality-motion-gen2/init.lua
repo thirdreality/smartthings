@@ -7,9 +7,9 @@ local sensitivityLevel = capabilities["appleheart46609.pirSensitivity"]
 local IASZone = zcl_clusters.IASZone
 
 local PRIVATE_CLUSTER_ID = 0xFF01
-local SENSITIVITY_ATTR_ID = 0x0004
-local COOLDOWN_ATTR_ID = 0x0005
-local MOTION_LED_ATTR_ID = 0x0006
+local SENSITIVITY_ATTR_ID = 0x0000
+local COOLDOWN_ATTR_ID = 0x0001
+local MOTION_LED_ATTR_ID = 0x0002
 
 --- Handle IAS Zone status (motion + tamper)
 local function zone_status_handler(driver, device, zone_status, zb_rx)
@@ -56,7 +56,7 @@ local function info_changed(driver, device, event, args)
     local led_enabled = device.preferences.motionLED
     if led_enabled == nil then led_enabled = true end
     device:send(cluster_base.write_attribute(device, data_types.ClusterId(PRIVATE_CLUSTER_ID),
-      data_types.AttributeId(MOTION_LED_ATTR_ID), data_types.Boolean(led_enabled)))
+      data_types.AttributeId(MOTION_LED_ATTR_ID), data_types.Uint8(led_enabled and 1 or 0)))
   end
 end
 
